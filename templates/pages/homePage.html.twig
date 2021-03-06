@@ -4,14 +4,16 @@
     <div class="container">
         <div class="col-5 mx-auto my-5 p-3 rounded-3 bg-light">
             <h1>Shorten your link</h1>
-            <form>
+            <form class="mb-3">
                 <div class="form-group mb-3">
                     <label class="mb-1" for="linkAddress">Link address</label>
                     <input type="text" class="form-control" id="linkAddress" placeholder="Enter your link">
-                    <small id="linkError" class="d-none"></small>
+                    <small id="linkError" class="d-none text-danger">Invalid address url</small>
                 </div>
-                <button type="submit" class="btn btn-primary d-block w-100">Generate short link</button>
+                <input type="hidden" id="hostName" value="{{ host }}">
+                <button type="button" class="btn btn-primary d-block w-100">Generate short link</button>
             </form>
+            <div class="d-none bg-success rounded-3 text-light py-1 px-2" id="response"></div>
         </div>
     </div>
 {% endblock %}
